@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.springframework.stereotype.Service;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -47,6 +46,7 @@ public class ScraperService {
         playersList.forEach(player -> {
             if(player.getText().equals(playerName)) {
                 player_link[0] = player.getAttribute("href");
+                return;
             }
         });
 
